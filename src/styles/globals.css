@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@theme{
+  --color-brand-gray: #585F74;
+  --color-brand-gray-2: #768298;
+  --color-brand-blue: #3F83E9;
+  --color-brand-neutral: #2F3345;
+  --color-brand-neutral-2: #34394D;
+  --color-brand-neutral-3: #2B2F42;
+  --color-brand-dark: #13151C;
+  --color-brand-yellow: #FFB835;
+  --color-brand-disabled: #181B27;
+
+  --breakpoint-xl2: 86.25rem; /* 1380px */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+p{
+  leading-trim: both;
+  text-edge: cap;
+  line-height: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.event-bg{
+  border-radius: 10px;
+  background: radial-gradient(circle farthest-corner at left center, rgba(255, 0, 0, 0.52) 0%, rgba(255, 0, 0, 0.00) 77.6%), #13151C;
+  /* background: linear-gradient(to right, rgba(255, 0, 0, 0.52) 30%, rgba(255, 0, 0, 0.00) 77.6%), #13151C; */
+  box-shadow: 0 0 13.3px 0 rgba(0, 0, 0, 0.06) inset;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.btn{
+  border-radius: 10px;
+  border: 1px solid var(--Stroke, rgba(255, 255, 255, 0.26));
+  background: linear-gradient(270deg, #FFB835 0%, #EA9800 100%);
+  box-shadow: 0 0 13.3px 0 #FFD586 inset;
+}
+
+.weapon-swiper {
+  overflow: visible !important;
+}
+
+.weapon-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.weapon-slider-container {
+  padding-left: 60px;
+  padding-right: 0;
 }
