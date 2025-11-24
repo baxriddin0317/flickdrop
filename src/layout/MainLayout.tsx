@@ -11,13 +11,13 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#0C0E16]">
+    <div className="flex min-h-screen flex-col">
       <Header />
       <div className="w-full py-6 overflow-x-hidden relative z-10">
         <WeaponSlider />
       </div>
       <MobileMenu />
-      <main>
+      <main className="mb-40">
         {children}
       </main>
 

@@ -113,7 +113,7 @@ const Header = () => {
                   anchor="bottom start"
                   transition
                   className={clsx(
-                    'w-40 rounded-xl border border-white/5 bg-brand-neutral p-1 [--anchor-gap:--spacing(1)] empty:invisible',
+                    'w-40 rounded-xl border border-white/5 bg-brand-neutral z-50 p-1 [--anchor-gap:--spacing(1)] empty:invisible',
                     'transition duration-100 ease-out data-closed:scale-95 data-closed:opacity-0 outline-none'
                   )}
                 >
