@@ -7,6 +7,7 @@
   --color-brand-gray: #585F74;
   --color-brand-gray-2: #768298;
   --color-brand-blue: #3F83E9;
+  --color-brand-blue-2: #62B7FF;
   --color-brand-neutral: #2F3345;
   --color-brand-neutral-2: #34394D;
   --color-brand-neutral-3: #2B2F42;
@@ -14,6 +15,8 @@
   --color-brand-dark: #13151C;
   --color-brand-yellow: #FFB835;
   --color-brand-disabled: #181B27;
+  --color-brand-green: #47CD70;
+  --color-brand-red: #CD4747;
 
   --breakpoint-xl2: 86.25rem; /* 1380px */
 }
@@ -22,8 +25,8 @@ body{
   background-color: #0C0E16;
   background-image: url("/main-bg.jpg");
   background-position: top center;
-  background-repeat: no-repeat;
-  background-size: min(1728px, 100vw) 100%;
+  background-repeat: repeat-y;
+  background-size: 100% 100%;
 }
 
 .scroll-style::-webkit-scrollbar{

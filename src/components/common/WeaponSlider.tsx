@@ -106,7 +106,7 @@ const WeaponSlider = () => {
             className={clsx(
               'flex items-center border justify-center h-10 w-14 rounded-t-lg font-medium transition-all cursor-pointer',
               activeFilter === 'all'
-                ? 'bg-brand-neutral-3 text-white border-white/25  shadow-[0_0_13.3px_0_rgba(128,168,255,0.12)_inset]'
+                ? 'bg-brand-neutral-3 text-white border-white/10  shadow-[0_0_13.3px_0_rgba(128,168,255,0.12)_inset]'
                 : 'bg-brand-disabled text-brand-gray-2 hover:text-white border-brand-disabled'
             )}
           >
@@ -117,7 +117,7 @@ const WeaponSlider = () => {
             className={clsx(
               'flex items-center border justify-center h-10 w-14 rounded-b-lg font-medium transition-all cursor-pointer',
               activeFilter === 'top'
-                ? 'bg-brand-neutral-3 text-white border-white/25 shadow-[0_0_13.3px_0_rgba(128,168,255,0.12)_inset]'
+                ? 'bg-brand-neutral-3 text-white border-white/10 shadow-[0_0_13.3px_0_rgba(128,168,255,0.12)_inset]'
                 : 'bg-brand-disabled text-brand-gray-2 hover:text-white border-brand-disabled'
             )}
           >
