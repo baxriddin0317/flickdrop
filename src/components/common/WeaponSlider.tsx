@@ -98,8 +98,8 @@ const WeaponSlider = () => {
   const [activeFilter, setActiveFilter] = useState<FilterType>('top')
 
   return (
-    <div className='max-w-[1728px] mx-auto px-8'>
-      <div className="w-full overflow-hidden relative bg-[#101217] rounded-[20px] border border-white/5 shadow-[0_0_13.3px_0_rgba(0,0,0,0.30)_inset] p-2.5 z-0">
+    <div className='max-w-[1728px] mx-auto px-1.5 md:px-4 lg:px-8'>
+      <div className="w-full overflow-hidden relative bg-[#101217] rounded-[20px] border border-white/5 shadow-[0_0_13.3px_0_rgba(0,0,0,0.30)_inset] py-1.5 px-2.5 lg:p-2.5 z-0">
         <div className="absolute z-20 left-2.5 flex flex-col">
           <button
             onClick={() => setActiveFilter('all')}
@@ -124,6 +124,8 @@ const WeaponSlider = () => {
             Top
           </button>
         </div>
+
+        <div className='absolute right-0 top-0 z-20 h-full w-[72px] lg:w-[97px] bg-[linear-gradient(270deg,#101217_0%,rgba(16,18,23,0.00)_100%)]'></div>
 
         <div className="relative weapon-slider-container">
           <Swiper

@@ -28,7 +28,7 @@ const Header = () => {
   
   return (
     <header className='relative z-10'>
-      <div className='max-w-[1728px] flex items-center justify-between w-full mx-auto px-8 gap-2 py-1.5'>
+      <div className='max-w-[1728px] flex items-center justify-between w-full mx-auto px-1.5 md:px-4 lg:px-8 gap-2 py-1.5'>
         <div className='flex items-center '>
           <OnlinesIcon />
           <p className='text-sm font-medium text-brand-gray'>
@@ -36,12 +36,12 @@ const Header = () => {
           </p>
         </div>
 
-        <div className='flex items-center gap-6'>
+        <div className='hidden lg:flex items-center gap-6'>
           <Link className='text-sm text-brand-gray hover:text-white font-medium' href={'#'}>Privacy Policy</Link>
           <Link className='text-sm text-brand-gray hover:text-white font-medium' href={'#'}>Public Offer</Link>
         </div>
 
-        <div className='flex items-center gap-2.5'>
+        <div className='hidden lg:flex items-center gap-2.5'>
           <Link className='group' href={'#'}>
             <svg className='group-hover:fill-white fill-brand-gray' xmlns="http://www.w3.org/2000/svg" width={20} height={19} viewBox="0 0 20 19" fill="none">
               <path fillRule="evenodd" clipRule="evenodd" d="M17.8314 0.126402C18.9081 -0.356001 20.0624 0.612796 19.8722 1.83936L17.6268 16.3268C17.4102 17.7237 15.9685 18.5252 14.7642 17.8291C13.7564 17.2466 12.2612 16.3501 10.9136 15.4131C10.2408 14.9452 8.18036 13.445 8.43362 12.377C8.65016 11.4638 12.1139 8.03288 14.0933 5.99245C14.8707 5.19096 14.5166 4.72793 13.5984 5.46589C11.3206 7.29653 7.66357 10.0798 6.45423 10.8631C5.38724 11.5542 4.83013 11.6721 4.16562 11.5542C2.95215 11.339 1.82712 11.0058 0.908628 10.6007C-0.332787 10.0531 -0.272318 8.23771 0.907787 7.70904L17.8314 0.126402Z" />
@@ -56,11 +56,12 @@ const Header = () => {
       </div>
 
       <nav className='bg-[linear-gradient(180deg,#181B27_0%,#161822_100%)] py-4'>
-        <div className='max-w-[1728px] flex items-center gap-2 justify-between w-full mx-auto px-8'>
+        <div className='max-w-[1728px] flex items-center gap-2 justify-between w-full mx-auto px-1.5 md:px-4 lg:px-8'>
           <div className='flex items-center gap-6'>
             {/* logo */}
-            <Link className='relative h-[49] w-[198px]' href={'/'}>
-              <Image src={'/logo.png'} alt='' fill />
+            <Link className='relative h-[49] md:w-[198px] w-[123px]' href={'/'}>
+              <Image className='hidden md:block' src={'/logo.png'} alt='' fill />
+              <Image className='block md:hidden' src={'/mobile-logo.png'} alt='' fill />
             </Link>
             {/* menu */}
             <div className='hidden xl2:flex items-center gap-3'>
@@ -98,9 +99,9 @@ const Header = () => {
             {/* deposite */}
             <div className='flex items-center justify-between gap-0.5 h-11 rounded-lg bg-brand-neutral pl-0.5 relative'>
               <Listbox value={selected} onChange={setSelected}>
-                <ListboxButton className="flex items-center justify-center h-10 w-full px-3 flex-1 bg-brand-neutral shadow-[0_0_13.3px_0_rgba(0,0,0,0.30)_inset] outline-none cursor-pointer rounded-lg gap-2">
-                  <span className='flex bg-brand-yellow items-center justify-center size-6 rounded-full text-brand-dark font-bold'>{selected?.symbol}</span>
-                  <span className='block text-lg font-bold text-white'>{selected?.amount}</span>
+                <ListboxButton className="flex items-center justify-center h-8 md:h-10 w-full px-3 flex-1 bg-brand-neutral shadow-[0_0_13.3px_0_rgba(0,0,0,0.30)_inset] outline-none cursor-pointer rounded-lg gap-2">
+                  <span className='flex bg-brand-yellow items-center justify-center size-5 lg:size-6 rounded-full text-brand-dark text-sm lg:text-base font-bold'>{selected?.symbol}</span>
+                  <span className='block lg:text-lg font-bold text-white'>{selected?.amount}</span>
                   <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width={15} height={15} viewBox="0 0 15 15" fill="none">
                       <rect width={15} height={15} rx={3} fill="#3C4152" />
@@ -132,19 +133,19 @@ const Header = () => {
                   ))}
                 </ListboxOptions>
               </Listbox>
-              <button className='flex items-center justify-center gap-2.5 px-3.5 btn h-full uppercase font-bold text-brand-dark cursor-pointer' type='button'>
+              <button className='flex items-center justify-center lg:gap-2.5 px-3 md:px-3.5 btn h-full uppercase font-bold text-brand-dark cursor-pointer' type='button'>
                 <CashIcon />
-                Deposit
+                <span className='hidden lg:block'>Deposit</span>
               </button>
             </div>
             {/* profile */}
-            <Link className='relative overflow-hidden rounded-[10px] size-11' href={'#'}>
+            <Link className='relative overflow-hidden rounded-[10px] w-10 h-[42px] md:size-11' href={'#'}>
               <Image src={'/profile.jpg'} fill alt='profile' />
             </Link>
-            <button className='size-11 flex items-center justify-center bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-[10px] cursor-pointer'>
+            <button className='hidden size-11 md:flex items-center justify-center bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-[10px] cursor-pointer'>
               <BellIcon />
             </button>
-            <button className='size-11 flex items-center justify-center bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-[10px] cursor-pointer'>
+            <button className='hidden size-11 md:flex items-center justify-center bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-[10px] cursor-pointer'>
               <SettingsIcon />
             </button>
           </div>

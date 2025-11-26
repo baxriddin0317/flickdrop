@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const Footer = () => {
   return (
-    <footer className="relative z-0">
+    <footer className="relative z-0 mt-auto">
       <div className="relative max-w-[1928px] mx-auto overflow-hidden h-[420px] z-20">
         <div className="size-[760px] absolute z-20 -left-1/3 top-2/3 rounded-full bg-[rgba(164,70,70,0.36)] blur-[185.4499969482422px]"></div>
         <div className="size-[760px] absolute z-20 -right-[20%] top-2/3 rounded-full bg-[rgba(70,129,164,0.36)] blur-[185.4499969482422px]"></div>
@@ -21,9 +21,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="absolute flex flex-col items-center justify-center gap-6 bottom-7 left-1/2 -translate-x-1/2 z-20">
+      <div className="absolute w-full flex flex-col items-center justify-center gap-6 bottom-7 left-1/2 -translate-x-1/2 z-20">
         <FooterLogo />
-        <div className='flex items-center gap-11'>
+        <div className='flex items-center gap-10 lg:gap-11'>
           <Link className='text-lg text-white font-medium' href={'#'}>Privacy Policy</Link>
           <Link className='text-lg text-white font-medium' href={'#'}>Public Offer</Link>
         </div>
@@ -46,7 +46,7 @@ const Footer = () => {
           <p className="text-lg max-w-[317px] xl:max-w-[375px] text-center font-medium text-brand-neutral-2">1600 Amphitheatre Pkwy, Mountain View, California, 94043, United States</p>
         </div>
         
-        <div className="mt-14 flex flex-wrap items-center justify-center xl:justify-between gap-y-3 gap-x-9">
+        <div className="mt-14 flex flex-wrap items-center justify-center xl:justify-between gap-y-3 gap-x-9 px-8">
           <div className="order-2 lg:order-1">
             <VisaLogo />
           </div>

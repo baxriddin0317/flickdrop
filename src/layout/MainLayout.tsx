@@ -16,7 +16,7 @@ export default function Layout({ children }: LayoutProps) {
       <div className="w-full py-6 overflow-x-hidden relative z-10">
         <WeaponSlider />
       </div>
-      <MobileMenu />
+      {/* <MobileMenu /> */}
       <main className="mb-40">
         {children}
       </main>
