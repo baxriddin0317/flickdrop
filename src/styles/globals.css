@@ -29,7 +29,7 @@ body {
   background-image: url("/main-bg.jpg");
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: min(1728px, 100vw) 100%;
+  background-size: 100vw 100%;
 }
 
 .scroll-style::-webkit-scrollbar {
