@@ -19,7 +19,7 @@ const CaseCard = ({ preview, name, currency = "$", price }: props) => {
         <span className="flex items-center justify-center min-w-[18px] h-[18px] mr-[5px] bg-[#768298] rounded-[50%]">
           {currency}
         </span>
-        <span className="font-gilroy font-bold text-[#768298]">{price}</span>
+        <span className="font-family-gilroy font-bold text-[#768298]">{price}</span>
       </div>
     </div>
   );

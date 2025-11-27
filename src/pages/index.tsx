@@ -49,13 +49,39 @@ export default function Home() {
       preview: "/giveaways/giveaway-bg-1.png",
       type: "★ Skeleton Knife",
       name: "Tiger Tooth",
-      currency: "",
-      value: "1052.52",
+      currency: "$",
+      price: 1052.52,
       date_ends: new Date("2026-01-01"),
       color: "#052079",
       onClick: () => {
         console.log("giveaway clicked");
-      }
+      },
+    },
+    {
+      id: 2,
+      preview: "/giveaways/giveaway-bg-2.png",
+      type: "★ Skeleton Knife",
+      name: "Tiger Tooth",
+      currency: "$",
+      price: 1052.52,
+      date_ends: new Date("2026-01-01"),
+      color: "#052079",
+      onClick: () => {
+        console.log("giveaway clicked");
+      },
+    },
+    {
+      id: 3,
+      preview: "/giveaways/giveaway-bg-3.png",
+      type: "★ Skeleton Knife",
+      name: "Tiger Tooth",
+      currency: "$",
+      price: 1052.52,
+      date_ends: new Date("2026-01-01"),
+      color: "#052079",
+      onClick: () => {
+        console.log("giveaway clicked");
+      },
     },
   ];
 
@@ -267,7 +293,7 @@ export default function Home() {
           />
         ))}
       </section>
-      <section className="max-w-[1664px] mx-auto mt-12 mb-14 w-full grid grid-cols-4 gap-2.5">
+      <section className="max-w-[1664px] mx-auto mt-12 mb-14 w-full grid grid-cols-3 gap-2.5">
         {available_giveaways.map((item, id) => (
           <GiveawayCard
             key={id}
@@ -278,7 +304,7 @@ export default function Home() {
             currency={item.currency}
             onClick={item.onClick}
             preview={item.preview}
-            value={item.value}
+            price={item.price}
           />
         ))}
       </section>
