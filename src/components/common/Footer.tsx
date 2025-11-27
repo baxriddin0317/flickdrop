@@ -24,7 +24,7 @@ const Footer = () => {
       <div className="absolute w-full flex flex-col items-center justify-center gap-6 bottom-7 left-1/2 -translate-x-1/2 z-20">
         <FooterLogo />
         <div className='flex items-center gap-10 lg:gap-11'>
-          <Link className='text-lg text-white font-medium' href={'#'}>Privacy Policy</Link>
+          <Link className='text-lg text-white font-medium' href={'/privacy-policy'}>Privacy Policy</Link>
           <Link className='text-lg text-white font-medium' href={'#'}>Public Offer</Link>
         </div>
 
