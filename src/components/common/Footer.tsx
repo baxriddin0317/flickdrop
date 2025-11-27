@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="relative z-0 mt-auto">
       <div className="relative max-w-[1928px] mx-auto overflow-hidden h-[420px] z-20">
         <div className="size-[760px] absolute z-20 -left-1/3 top-2/3 rounded-full bg-[rgba(164,70,70,0.36)] blur-[185.4499969482422px]"></div>
-        <div className="size-[760px] absolute z-20 -right-[20%] top-2/3 rounded-full bg-[rgba(70,129,164,0.36)] blur-[185.4499969482422px]"></div>
+        <div className="size-[760px] absolute z-20 -right-[15%] top-2/3 rounded-full bg-[rgba(70,129,164,0.36)] blur-[185.4499969482422px]"></div>
 
         <div className="absolute w-full h-[700px] top-1/2 -translate-y-10 left-0 bg-[linear-gradient(0deg,#666_36.81%,rgba(0,0,0,0.00)_75.08%)]"></div>
       </div>
@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="absolute left-0 2xl:left-[157px] bottom-0 z-0">
           <Image className="" src={'/imgs/footer-left.png'} width={515} height={774} alt="" />
         </div>
-        <div className="absolute right-0 2xl:right-[80px] overflow-y-hidden bottom-0 z-0">
+        <div className="absolute right-0 2xl:right-[90px] overflow-y-hidden bottom-0 z-0">
           <Image src={'/imgs/footer-right.png'} width={626} height={722} alt="" />
         </div>
       </div>
@@ -46,7 +46,7 @@ const Footer = () => {
           <p className="text-lg max-w-[317px] xl:max-w-[375px] text-center font-medium text-brand-neutral-2">1600 Amphitheatre Pkwy, Mountain View, California, 94043, United States</p>
         </div>
         
-        <div className="mt-14 flex flex-wrap items-center justify-center xl:justify-between gap-y-3 gap-x-9 px-8">
+        <div className="mt-14 max-w-[772px] w-full mx-auto flex flex-wrap items-center justify-center xl:justify-between gap-y-3 gap-x-9 px-8">
           <div className="order-2 lg:order-1">
             <VisaLogo />
           </div>

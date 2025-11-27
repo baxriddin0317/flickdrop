@@ -19,6 +19,7 @@
   --color-brand-red: #CD4747;
 
   --breakpoint-xl2: 86.25rem; /* 1380px */
+  --breakpoint-lg2: 1110px;
 }
 
 body{
@@ -60,15 +61,69 @@ p{
 
 .weapon-swiper {
   overflow: visible !important;
+  pointer-events: none;
 }
 
 .weapon-swiper .swiper-wrapper {
   align-items: stretch;
+  pointer-events: auto;
+  transition: transform 0.6s ease-out;
+}
+
+.weapon-swiper .swiper-slide {
+  pointer-events: auto;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
 .weapon-slider-container {
   padding-left: 60px;
   padding-right: 0;
+  overflow: hidden;
+  overscroll-behavior-x: none;
+}
+
+.weapon-slider-container .swiper {
+  overscroll-behavior-x: none;
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+}
+
+.weapon-slide-new {
+  animation: weaponSlideIn 0.6s ease-out;
+}
+
+@keyframes weaponSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.95);
+  }
+  50% {
+    transform: translateX(0) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.weapon-slide-shift {
+  animation: weaponSlideShift 0.6s ease-out;
+}
+
+@keyframes weaponSlideShift {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  20% {
+    transform: translateX(8px) scale(0.98);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+.weapon-swiper .swiper-wrapper {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @theme inline {

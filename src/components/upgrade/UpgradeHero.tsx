@@ -1,10 +1,9 @@
 "use client"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
-import { HeroLeftBottom, HeroRightBottom, UpgradeIcon2 } from '../icons'
-import { HeroLeft, HeroProgress, HeroRight, useAnimatedProgress } from './HeroProgress'
-import { Span } from 'next/dist/trace'
+import { UpgradeIcon2 } from '../icons'
+import { HeroLeft, HeroProgress, HeroRight, useAnimatedProgress } from './HeroSvgIcons'
 
 type UpgradeState = 'ready' | 'win' | 'lose' | 'disabled'
 
@@ -12,6 +11,27 @@ const UpgradeHero = () => {
   const [state, setState] = useState<UpgradeState>('ready')
   const precent = 20
   const animatedPrecent = useAnimatedProgress(precent)
+  const lg2Breakpoint = 1110;
+
+  const [hasMounted, setHasMounted] = useState(false)
+  const [isLg2Up, setIsLg2Up] = useState(
+    () => (typeof window !== 'undefined' ? window.innerWidth >= lg2Breakpoint : false)
+  )
+  
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!hasMounted) return
+    const onResize = () => setIsLg2Up(window.innerWidth >= lg2Breakpoint)
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [hasMounted])
+
+  if (!hasMounted) {
+    return null
+  }
 
   const handleUpgrade = () => {
     if (state === 'ready') {
@@ -28,36 +48,22 @@ const UpgradeHero = () => {
 
   return (
     <>
-      <div className=" h-[800px] mx-auto relative z-0">
+      <div className="md:h-[800px] mx-auto relative z-0">
         {state === 'win' ? (
-          <Image className='absolute w-full object-cover h-[1231px] left-0 -z-10' src={'/imgs/upgrade-win.png'} alt='' fill />
+          <Image className='absolute w-full lg:object-cover h-[342px]! md:h-[450px]! lg:h-[1231px] left-0 -z-10' src={'/imgs/upgrade-win.png'} alt='' fill />
         ) : state=='lose' ? (
-          <Image className='absolute w-full object-cover h-[1231px] left-0 -z-10' src={'/imgs/upgrade-lose.png'} alt='' fill />
+          <Image className='absolute w-full lg:object-cover h-[342px]! md:h-[450px]! lg:h-[1231px] left-0 -z-10' src={'/imgs/upgrade-lose.png'} alt='' fill />
         ) : (
-          <Image className='absolute w-full object-cover h-[1231px] left-0 -z-10' src={'/imgs/upgrade-default.png'} alt='' fill />
+          <Image className='absolute w-full lg:object-cover h-[342px]! md:h-[450px]! lg:h-[1231px] left-0 -z-10' src={'/imgs/upgrade-default.png'} alt='' fill />
         )}
-        <div className='relative z-10 pt-6 translate-y-14'>
+        <div className='relative z-10 lg2:pt-6 lg2:translate-y-14'>
           <h2 className='uppercase text-center font-bold text-4xl bg-linear-to-b from-[#718EC5] to-[#9CBCFB] bg-clip-text text-transparent'>upgrade</h2>
           
-          <div className='flex items-center justify-center py-6'>
-            <div className='relative translate-x-[68px] z-0'>
-              <span className='absolute left-14 top-7 text-sm text-brand-gray-2 font-medium'>Ваш предмет</span>
+          <div className='flex flex-col lg2:flex-row items-center justify-center lg:py-6 overflow-hidden lg2:overflow-visible'>
+            {isLg2Up && <div className='relative translate-x-[68px] z-0'>
               <HeroLeft state={state} />
-              <span className='hidden 2xl:block absolute bottom-7 -z-10 translate-y-full left-1/2 -translate-x-1/2'><HeroLeftBottom /></span>
-              <Image className='absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2' src={'/gun-img.png'} alt='' width={210} height={157} />
-              <div className={clsx(
-                "flex flex-col items-end justify-end",
-                "absolute z-10 right-28 bottom-14 max-w-[109px] w-full"
-              )}>
-                <p className="text-brand-gray-2 line-clamp-1 text-xs font-medium text-ellipsis">Specialist Gloves</p>
-                <p className="text-white line-clamp-1 text-sm font-bold text-ellipsis">Lt. Commander</p>
-                <div className="flex items-center gap-1.5">
-                  <span className='flex bg-brand-yellow items-center justify-center size-4 rounded-full text-brand-dark font-medium text-[10px]'>$</span>
-                  <span className="text-sm font-bold text-white">1052.52</span>
-                </div>
-              </div>
-            </div>
-            <div className='relative z-20 translate-y-[13px]'>
+            </div>}
+            <div className='relative z-20 translate-y-4 lg2:translate-y-[13px]'>
               <HeroProgress state={state} progress={precent} />
               <div className='absolute flex flex-col items-center justify-center top-1/2 left-1/2 -translate-y-1/2 -mt-4 ml-0.5 -translate-x-1/2'>
                 <p className='text-center text-brand-gray-2 text-sm font-medium'>{state == 'win' ? 'Вы выиграли!' : state == 'lose' ? 'Вы проиграли Попробуйте еще!' : (<span>Шанс <br /> выигрыша</span>)}</p>
@@ -69,26 +75,21 @@ const UpgradeHero = () => {
                 </p>
               </div>
             </div>
-            <div className='relative -translate-x-[70px] -translate-y-0.5'>
-              <span className='absolute right-14 top-7 text-sm text-brand-gray-2 font-medium'>Апгрейд</span>
+            {isLg2Up && <div className='relative -translate-x-[70px] -translate-y-0.5'>
               <HeroRight state={state} />
-              <span className='hidden 2xl:block absolute bottom-7 -z-10 translate-y-full right-1/2 translate-x-1/2'><HeroRightBottom /></span>
-              <Image className='absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2' src={'/gun-img.png'} alt='' width={210} height={157} />
-              <div className={clsx(
-                "flex flex-col",
-                "absolute z-10 left-24 bottom-[53px] max-w-[109px] w-full"
-              )}>
-                <p className="text-brand-gray-2 line-clamp-1 text-xs font-medium text-ellipsis">Specialist Gloves</p>
-                <p className="text-white line-clamp-1 text-sm font-bold text-ellipsis">Lt. Commander</p>
-                <div className="flex items-center gap-1.5">
-                  <span className='flex bg-brand-yellow items-center justify-center size-4 rounded-full text-brand-dark font-medium text-[10px]'>$</span>
-                  <span className="text-sm font-bold text-white">1052.52</span>
-                </div>
+            </div>}
+
+            <div className='lg2:hidden scale-50 sm:scale-75 md:scale-100 flex items-center -translate-y-12 sm:translate-y-0 md:mt-5'>
+              <div className='relative w-[390px] overflow-hidden lg2:w-auto translate-x-[68px] z-10'>
+                <HeroLeft state={state} />
+              </div>
+              <div className='relative -translate-x-[70px]'>
+                <HeroRight state={state} />
               </div>
             </div>
           </div>
 
-          <div className='flex items-center justify-center mt-5'>
+          <div className='flex items-center justify-center -translate-y-24 sm:translate-y-0 md:mt-5'>
             <button 
               className={clsx(
                 'flex items-center justify-center gap-2.5 px-7 py-4 h-full uppercase font-bold  cursor-pointer',

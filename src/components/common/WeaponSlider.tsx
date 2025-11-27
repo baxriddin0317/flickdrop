@@ -1,8 +1,7 @@
 "use client"
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { FreeMode } from 'swiper/modules'
-import Image from 'next/image'
 import clsx from 'clsx'
 import 'swiper/css'
 import 'swiper/css/free-mode'
@@ -96,6 +95,36 @@ const weaponItems: WeaponItem[] = [
 
 const WeaponSlider = () => {
   const [activeFilter, setActiveFilter] = useState<FilterType>('top')
+  const [items, setItems] = useState<WeaponItem[]>(weaponItems)
+  const [newlyAddedId, setNewlyAddedId] = useState<number | null>(null)
+  const itemIdCounter = useRef(weaponItems.length + 1)
+
+  // Yangi item qo'shish funksiyasi
+  const addNewItem = () => {
+    const newItem: WeaponItem = {
+      id: itemIdCounter.current++,
+      name: 'Specialist Gloves',
+      type: 'Lt. Commander',
+      price: '1052.52',
+      image: '/gun.png',
+      bgColor: ['#FF0000', '#0051ff', '#DD00FF', '#FF8800', '#FF006F'][Math.floor(Math.random() * 5)]
+    }
+   
+    setItems(prevItems => [newItem, ...prevItems])
+    setNewlyAddedId(newItem.id)
+    
+    setTimeout(() => {
+      setNewlyAddedId(null)
+    }, 800)
+  }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      addNewItem()
+    }, 7000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div className='max-w-[1728px] mx-auto px-1.5 md:px-4 lg:px-8'>
@@ -127,17 +156,38 @@ const WeaponSlider = () => {
 
         <div className='absolute right-0 top-0 z-20 h-full w-[72px] lg:w-[97px] bg-[linear-gradient(270deg,#101217_0%,rgba(16,18,23,0.00)_100%)]'></div>
 
-        <div className="relative weapon-slider-container">
+        <div 
+          className="relative weapon-slider-container"
+          onWheel={(e) => e.preventDefault()}
+          onTouchMove={(e) => e.preventDefault()}
+          onMouseDown={(e) => e.preventDefault()}
+        >
           <Swiper
             modules={[FreeMode]}
             freeMode={true}
             slidesPerView="auto"
             spaceBetween={4}
             className="weapon-swiper"
+            allowTouchMove={false}
+            allowSlideNext={false}
+            allowSlidePrev={false}
+            simulateTouch={false}
+            touchStartPreventDefault={true}
+            touchMoveStopPropagation={true}
+            preventClicks={false}
+            preventClicksPropagation={false}
+            onWheel={(e) => e.preventDefault()}
           >
-            {weaponItems.map((item) => (
-              <SwiperSlide key={item.id} className="w-auto!">
-                <GunCard bgColor={item.bgColor} name={item.name} type={item.type} image={item.image} price={item.price} />
+            {items.map((item) => (
+              <SwiperSlide 
+                key={item.id} 
+                className={clsx(
+                  "w-auto!",
+                  newlyAddedId === item.id && "weapon-slide-new",
+                  newlyAddedId !== null && newlyAddedId !== item.id && "weapon-slide-shift"
+                )}
+              >
+                <GunCard id={item.id} bgColor={item.bgColor} name={item.name} type={item.type} image={item.image} price={item.price} />
               </SwiperSlide>
             ))}
             {/* Extra slide to allow scrolling to edge */}

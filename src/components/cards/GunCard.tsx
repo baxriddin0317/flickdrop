@@ -2,6 +2,7 @@ import clsx from "clsx"
 import Image from "next/image"
 
 interface props {
+  id: number;
   bgColor: string;
   name: string;
   type: string;
@@ -9,7 +10,7 @@ interface props {
   image: string
 }
 
-const GunCard = ({bgColor, name, price, type, image}: props) => {
+const GunCard = ({id, bgColor, name, price, type, image}: props) => {
   return (
     <div
       className={clsx(
@@ -46,7 +47,7 @@ const GunCard = ({bgColor, name, price, type, image}: props) => {
         "absolute z-10 right-2.5 top-1/2 -translate-y-1/2 max-w-[109px] w-full",
         "group-hover:-top-full transition-all duration-300 ease-[cubic-bezier(0.310,-0.105,0.430,1.400)]"
       )}>
-        <p className="text-brand-gray-2 line-clamp-1 text-xs font-medium text-ellipsis">{name}</p>
+        <p className="text-brand-gray-2 line-clamp-1 text-xs font-medium text-ellipsis">{name}{id}</p>
         <p className="text-white line-clamp-1 text-sm font-bold text-ellipsis">{type}</p>
         <div className="flex items-center gap-1.5 mt-2">
           <span className='flex bg-brand-yellow items-center justify-center size-4 rounded-full text-brand-dark font-medium text-xs'>$</span>
