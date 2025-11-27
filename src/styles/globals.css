@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme{
+@theme {
   --color-brand-gray: #585F74;
   --color-brand-gray-2: #768298;
   --color-brand-blue: #3F83E9;
@@ -15,10 +15,16 @@
   --color-brand-yellow: #FFB835;
   --color-brand-disabled: #181B27;
 
-  --breakpoint-xl2: 86.25rem; /* 1380px */
+  --breakpoint-xl2: 86.25rem;
+  /* 1380px */
+
+  --font-family-gilroy: var(--font-gilroy);
+  --font-family-druk: var(--font-druk-cyr);
+  --font-family-helvetica: var(--font-helvetica);
+  --font-family-sans: var(--font-gilroy), ui-sans-serif, system-ui, sans-serif;
 }
 
-body{
+body {
   background-color: #0C0E16;
   background-image: url("/main-bg.jpg");
   background-position: top center;
@@ -26,29 +32,29 @@ body{
   background-size: min(1728px, 100vw) 100%;
 }
 
-.scroll-style::-webkit-scrollbar{
+.scroll-style::-webkit-scrollbar {
   background: rgba(31, 34, 48, 0.76);
   width: 2px;
 }
 
-.scroll-style::-webkit-scrollbar-thumb{
+.scroll-style::-webkit-scrollbar-thumb {
   background: #768298;
 }
 
-p{
+p {
   leading-trim: both;
   text-edge: cap;
   line-height: normal;
 }
 
-.event-bg{
+.event-bg {
   border-radius: 10px;
   background: radial-gradient(circle farthest-corner at left center, rgba(255, 0, 0, 0.52) 0%, rgba(255, 0, 0, 0.00) 77.6%), #13151C;
   /* background: linear-gradient(to right, rgba(255, 0, 0, 0.52) 30%, rgba(255, 0, 0, 0.00) 77.6%), #13151C; */
   box-shadow: 0 0 13.3px 0 rgba(0, 0, 0, 0.06) inset;
 }
 
-.btn{
+.btn {
   border-radius: 10px;
   border: 1px solid var(--Stroke, rgba(255, 255, 255, 0.26));
   background: linear-gradient(270deg, #FFB835 0%, #EA9800 100%);
@@ -179,7 +185,51 @@ p{
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.info-page h2,
+.info-page h3 {
+  font-family: Gilroy;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 148.33%;
+  letter-spacing: 0%;
+  text-align: left;
+  color: white;
+}
+
+.info-page p,
+.info-page li {
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0%;
+  text-align: left;
+  color: #768298;
+}
+.info-page li:first-child {
+  margin-top: 12px;
+}
+.info-page li:not(:last-child) {
+  margin-bottom: 12px;
+}
+.info-page ol {
+  padding-left: 20px;
+  list-style: decimal;
+}
+.info-page ol:not(:last-child) {
+  margin-bottom: 12px;
+}
+.info-page h2+p,
+.info-page h3+p {
+  margin-top: 18px;
+}
+
+.info-page p+h2,
+.info-page p+h3 {
+  margin-top: 12px;
 }
