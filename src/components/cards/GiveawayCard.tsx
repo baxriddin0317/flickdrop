@@ -3,12 +3,14 @@ import Image from "next/image";
 
 interface GiveawayProps {
   preview: string;
+  type?: string;
   name: string;
+  currency?: string;
   value: string;
   date_ends: Date;
   onClick: () => void;
   color: string;
-  btnColor: string;
+  btnColor?: string;
 }
 
 interface TimeLeft {
@@ -20,12 +22,14 @@ interface TimeLeft {
 
 const Giveaway = ({
   preview,
+  type,
   name,
+  currency,
   value,
   date_ends,
   onClick,
   color,
-  btnColor
+  btnColor = "#4083e9"
 }: GiveawayProps) => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
@@ -71,9 +75,14 @@ const Giveaway = ({
       }}
     >
       <div className="font-family-gilroy text-4xl text-white leading-11 font-extrabold">
-        {value}
+        {currency}{value}
       </div>
-      <h3 className="mt-4 font-family-gilroy text-[22px] font-medium text-[#768298]">
+      {type && (
+        <h3 className="mt-2 font-family-gilroy text-[18px] font-medium text-white">
+          {type}
+        </h3>
+      )}
+      <h3 className="mt-2 font-family-gilroy text-[22px] font-medium text-[#768298]">
         {name}
       </h3>
       <h5 className="mt-9 font-family-gilroy text-[18px] font-medium leading-[22px] text-[#768298]">

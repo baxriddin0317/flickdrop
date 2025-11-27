@@ -273,7 +273,9 @@ export default function Home() {
             key={id}
             color={item.color}
             date_ends={item.date_ends}
+            type={item.type}
             name={item.name}
+            currency={item.currency}
             onClick={item.onClick}
             preview={item.preview}
             value={item.value}
