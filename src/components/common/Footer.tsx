@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <footer className="relative z-0 mt-auto">
       <div className="relative max-w-[1928px] mx-auto overflow-hidden h-[420px] z-20">
-        <div className="size-[760px] absolute z-20 -left-1/3 top-2/3 rounded-full bg-[rgba(164,70,70,0.36)] blur-[185.4499969482422px]"></div>
-        <div className="size-[760px] absolute z-20 -right-[15%] top-2/3 rounded-full bg-[rgba(70,129,164,0.36)] blur-[185.4499969482422px]"></div>
+        <div className="size-[760px] absolute z-20 -left-1/3 top-4/5 rounded-full bg-[rgba(164,70,70,0.36)] blur-[185.4499969482422px]"></div>
+        <div className="size-[760px] absolute z-20 -right-[15%] top-4/5 translate-y-10 rounded-full bg-[rgba(70,129,164,0.36)] blur-[185.4499969482422px]"></div>
 
         <div className="absolute w-full h-[700px] top-1/2 -translate-y-10 left-0 bg-[linear-gradient(0deg,#666_36.81%,rgba(0,0,0,0.00)_75.08%)]"></div>
       </div>

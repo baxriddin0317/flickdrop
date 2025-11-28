@@ -1,4 +1,19 @@
+import { ContractIcon, GiftIcon, HomeIcon, UpgradeIcon } from "@/components/icons";
 import { InventoryItem } from "@/components/upgrade/InventoryAndSkins";
+
+export const links = [
+  { id: 'main', name: 'Main', href: '/', icon: <HomeIcon /> },
+  { id: 'bonus', name: 'Bonus', href: '/bonus', icon: <GiftIcon /> },
+  { id: 'upgrade', name: 'Upgrade', href: '/upgrade', icon: <UpgradeIcon /> },
+  { id: 'contract', name: 'Contract', href: '/contact', icon: <ContractIcon /> }
+]
+
+export const currencies = [
+  { id: 1, code: 'USD', symbol: '$', name: 'US Dollar', amount: '1052.52' },
+  { id: 2, code: 'EUR', symbol: '€', name: 'Euro', amount: '152.52' },
+  { id: 3, code: 'RUB', symbol: '₽', name: 'Russian Ruble', amount: '2052.52' },
+  { id: 5, code: 'BTC', symbol: '₿', name: 'Bitcoin', amount: '0.025' },
+]
 
 export const upgradeSkins: InventoryItem[] = [
   { id: 0, name: "Specialist Gloves", type: "Lt. Commander", price: "1042.32" },

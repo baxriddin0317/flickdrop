@@ -1,6 +1,6 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
-import MobileMenu from "@/components/common/MobileMenu";
+import MobileNavigation from "@/components/common/MobileNavigation";
 import WeaponSlider from "@/components/common/WeaponSlider";
 import { ReactNode } from "react";
 
@@ -13,10 +13,10 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <div className="w-full py-6 overflow-x-hidden relative z-10">
+      <div className="w-full py-6 overflow-x-hidden relative z-0">
         <WeaponSlider />
       </div>
-      {/* <MobileMenu /> */}
+      <MobileNavigation />
       <main className="mb-40">
         {children}
       </main>

@@ -2,28 +2,17 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { BellIcon, CashIcon, ContractIcon,  GiftIcon, HomeIcon, OnlinesIcon, SettingsIcon, UpgradeIcon } from '../icons'
+import { BellIcon, CashIcon, MenuIcon, OnlinesIcon, SettingsIcon } from '../icons'
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
 import { useState } from 'react'
 import clsx from 'clsx'
-
-const links = [
-  { id: 'main', name: 'Main', href: '/', icon: <HomeIcon /> },
-  { id: 'bonus', name: 'Bonus', href: '/bonus', icon: <GiftIcon /> },
-  { id: 'upgrade', name: 'Upgrade', href: '/upgrade', icon: <UpgradeIcon /> },
-  { id: 'contract', name: 'Contract', href: '/contact', icon: <ContractIcon /> }
-]
-
-const currencies = [
-  { id: 1, code: 'USD', symbol: '$', name: 'US Dollar', amount: '1052.52' },
-  { id: 2, code: 'EUR', symbol: '€', name: 'Euro', amount: '152.52' },
-  { id: 3, code: 'RUB', symbol: '₽', name: 'Russian Ruble', amount: '2052.52' },
-  { id: 5, code: 'BTC', symbol: '₿', name: 'Bitcoin', amount: '0.025' },
-]
+import { currencies, links } from '@/data/upgradeSkins'
+import { useMobileMenuStore } from '@/store/useMobileMenuStore'
 
 
 const Header = () => {
   const [selected, setSelected] = useState(currencies[0])
+  const toggleMobileMenu = useMobileMenuStore((state) => state.toggleMenu)
   const pathname = usePathname()
   
   return (
@@ -36,12 +25,12 @@ const Header = () => {
           </p>
         </div>
 
-        <div className='hidden lg:flex items-center gap-6'>
-          <Link className='text-sm text-brand-gray hover:text-white font-medium' href={'#'}>Privacy Policy</Link>
-          <Link className='text-sm text-brand-gray hover:text-white font-medium' href={'#'}>Public Offer</Link>
+        <div className='hidden md:flex items-center gap-6'>
+          <Link className='text-sm text-brand-gray hover:text-white font-medium' href={'/privacy-policy'}>Privacy Policy</Link>
+          <Link className='text-sm text-brand-gray hover:text-white font-medium' href={'/public-offer'}>Public Offer</Link>
         </div>
 
-        <div className='hidden lg:flex items-center gap-2.5'>
+        <div className='hidden md:flex items-center gap-2.5'>
           <Link className='group' href={'#'}>
             <svg className='group-hover:fill-white fill-brand-gray' xmlns="http://www.w3.org/2000/svg" width={20} height={19} viewBox="0 0 20 19" fill="none">
               <path fillRule="evenodd" clipRule="evenodd" d="M17.8314 0.126402C18.9081 -0.356001 20.0624 0.612796 19.8722 1.83936L17.6268 16.3268C17.4102 17.7237 15.9685 18.5252 14.7642 17.8291C13.7564 17.2466 12.2612 16.3501 10.9136 15.4131C10.2408 14.9452 8.18036 13.445 8.43362 12.377C8.65016 11.4638 12.1139 8.03288 14.0933 5.99245C14.8707 5.19096 14.5166 4.72793 13.5984 5.46589C11.3206 7.29653 7.66357 10.0798 6.45423 10.8631C5.38724 11.5542 4.83013 11.6721 4.16562 11.5542C2.95215 11.339 1.82712 11.0058 0.908628 10.6007C-0.332787 10.0531 -0.272318 8.23771 0.907787 7.70904L17.8314 0.126402Z" />
@@ -83,7 +72,7 @@ const Header = () => {
                 )
               })}
 
-              <Link className='relative h-11 w-[145px]' href={'#'}>
+              <Link className='relative h-11 w-[145px]' href={'/event'}>
                 <div className='absolute size-full event-bg'></div>
                 <div className='absolute bottom-0 '>
                   <Image className='' src={'/event.png'} width={92} height={54} alt='bg' />
@@ -139,14 +128,20 @@ const Header = () => {
               </button>
             </div>
             {/* profile */}
-            <Link className='relative overflow-hidden rounded-[10px] w-10 h-[42px] md:size-11' href={'#'}>
+            <Link className='relative overflow-hidden rounded-[10px] w-10 h-[42px] md:size-11' href={'/profile'}>
               <Image src={'/profile.jpg'} fill alt='profile' />
             </Link>
-            <button className='hidden size-11 md:flex items-center justify-center bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-[10px] cursor-pointer'>
+            <button className='hidden size-11 md:flex items-center justify-center bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-[10px] [&>svg]:fill-brand-gray cursor-pointer'>
               <BellIcon />
             </button>
-            <button className='hidden size-11 md:flex items-center justify-center bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-[10px] cursor-pointer'>
+            <button className='hidden size-11 md:flex items-center justify-center bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-[10px] [&>svg]:fill-brand-gray cursor-pointer'>
               <SettingsIcon />
+            </button>
+            <button 
+              onClick={toggleMobileMenu}
+              className='hidden md:flex xl2:hidden items-center justify-center size-11 bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-[10px] cursor-pointer'
+            >
+              <MenuIcon />
             </button>
           </div>
         </div>
