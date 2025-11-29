@@ -20,8 +20,7 @@ const ProductGrid = () => {
           </div>
         </div>
 
-        <div className="h-[533px] relative p-6 pr-3 z-10">
-          <div className="absolute bottom-0 left-0 w-full h-48 bg-[linear-gradient(180deg,rgba(19,21,33,0.00)_0%,#131521_80%)] z-20"></div>
+        <div className="h-[586px] relative p-6 pr-3 z-10">
           {upgradeSkins.length > 0 ? (
             <div className="overflow-y-scroll scroll-style grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-1 min-h-full h-full pr-3">
               {upgradeSkins.map((item) => (
