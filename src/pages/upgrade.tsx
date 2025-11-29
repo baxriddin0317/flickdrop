@@ -12,10 +12,10 @@ export default function UpgradePage() {
         <div className="lg:hidden py-8 px-4">
           <Tabs defaultValue="inventory" className="gap-2 md:gap-4">
             <TabsList className="w-full bg-transparent gap-1.5 md:gap-4">
-              <TabsTrigger value="inventory" className="flex-1 bg-brand-neutral-4/50! data-[state=active]:bg-brand-neutral-4! h-11! rounded-[10px]! border border-white/10! text-brand-gray-2! text-xs! font-bold! uppercase cursor-pointer">
+              <TabsTrigger value="inventory" className="flex-1 bg-brand-neutral-4/50! data-[state=active]:bg-brand-neutral-4! h-11! rounded-lg! border border-white/10! text-brand-gray-2! text-xs! font-bold! uppercase cursor-pointer">
                 Your inventory
               </TabsTrigger>
-              <TabsTrigger value="skins" className="flex-1 bg-brand-neutral-4/50! data-[state=active]:bg-brand-neutral-4! h-11! rounded-[10px]! border border-white/10! text-brand-gray-2! text-xs! font-bold! uppercase cursor-pointer">
+              <TabsTrigger value="skins" className="flex-1 bg-brand-neutral-4/50! data-[state=active]:bg-brand-neutral-4! h-11! rounded-lg! border border-white/10! text-brand-gray-2! text-xs! font-bold! uppercase cursor-pointer">
                 Skins
               </TabsTrigger>
             </TabsList>

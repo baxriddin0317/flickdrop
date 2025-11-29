@@ -15,7 +15,7 @@ const CaseCard = ({ preview, name, currency = "$", price }: props) => {
       <h3 className="mb-3 font-family-gilroy font-bold text-center text-white">
         {name}
       </h3>
-      <div className="py-2 px-2.5 mx-auto flex items-center w-fit rounded-[10px] bg-[#2f3345]">
+      <div className="py-2 px-2.5 mx-auto flex items-center w-fit rounded-lg bg-[#2f3345]">
         <span className="flex items-center justify-center min-w-[18px] h-[18px] mr-[5px] bg-[#768298] rounded-[50%]">
           {currency}
         </span>

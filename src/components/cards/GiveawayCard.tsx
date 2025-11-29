@@ -116,7 +116,7 @@ const Giveaway = ({
         <span className="font-family-gilroy text-[16px] leading-[19px] font-bold text-white">{price}</span>
       </div>
       <div className="mt-5 flex items-center gap-3">
-        <div className="py-2 px-3 border-transparent rounded-[10px] bg-[#181b27] flex items-center">
+        <div className="py-2 px-3 border-transparent rounded-lg bg-[#181b27] flex items-center">
           <div className="inline-flex flex-col items-center font-family-gilroy text-[14px] font-bold leading-[18px] text-white">
             <span>{formatNumber(timeLeft.days)}</span>
             <span className="text-[13px] leading-[13px] font-normal text-[#768298]">

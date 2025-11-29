@@ -14,7 +14,7 @@ const GunCard = ({id, bgColor, name, price, type, image}: props) => {
   return (
     <div
       className={clsx(
-        'relative min-w-[173px] w-[231px] h-[80px] overflow-hidden rounded-[10px] z-0',
+        'relative min-w-[173px] w-[231px] h-[80px] overflow-hidden rounded-lg z-0',
         'group',
         'bg-brand-disabled border border-white/5 shadow-[0_0_31.5px_0_rgba(0,0,0,0.55)_inset]'
       )}
@@ -83,7 +83,7 @@ const GunCard = ({id, bgColor, name, price, type, image}: props) => {
         "absolute flex flex-col items-end gap-1 z-10 right-2.5 top-full max-w-[109px] w-full",
         "group-hover:top-1/2 group-hover:-translate-y-1/2 transition-all duration-300 ease-[cubic-bezier(0.310,-0.105,0.430,1.400)]"
       )}>
-        <div className='relative overflow-hidden rounded-[10px] size-11'>
+        <div className='relative overflow-hidden rounded-lg size-11'>
           <Image src={'/profile.jpg'} fill alt='profile' />
         </div>
         <p className="text-white line-clamp-1 text-right text-sm font-bold text-ellipsis">JuicyART</p>

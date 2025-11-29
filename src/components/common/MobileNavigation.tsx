@@ -90,7 +90,7 @@ const MobileNavigation = () => {
           <div className='flex justify-end md:mb-6'>
             <button
               onClick={closeMenu}
-              className='flex items-center justify-center size-11 bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-[10px] cursor-pointer hover:bg-brand-neutral transition-colors'
+              className='flex items-center justify-center size-11 bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-lg cursor-pointer hover:bg-brand-neutral transition-colors'
             >
               <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 20 20" fill="none" className='stroke-brand-gray-2 hover:stroke-white transition-colors'>
                 <path d="M15 5L5 15M5 5l10 10" strokeWidth="2" strokeLinecap="round"/>

@@ -18,7 +18,7 @@ const SkinCard = ({price, name, type}: props) => {
         </div>
         <div className="relative z-20 flex flex-col items-center justify-center">
           <p className="text-brand-gray-2 line-clamp-1 text-[9px] font-medium text-ellipsis">{name}</p>
-          <p className="text-white line-clamp-1 text-[10px] font-bold text-ellipsis">{type}</p>
+          <p className="text-white line-clamp-1 text-xxs font-bold text-ellipsis">{type}</p>
         </div>
         <span className="absolute z-0 bottom-0 w-full left-0">
           <svg className="h-[121px] min-w-[153px] w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153 121" fill="none">

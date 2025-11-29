@@ -93,7 +93,7 @@ const UpgradeHero = () => {
             <button 
               className={clsx(
                 'flex items-center justify-center gap-2.5 px-7 py-4 h-full uppercase font-bold  cursor-pointer',
-                state == 'disabled' ? "bg-brand-disabled! [&>svg]:fill-brand-gray-2 rounded-[10px] text-brand-gray-2" : "btn [&>svg]:fill-brand-dark text-brand-dark",
+                state == 'disabled' ? "bg-brand-disabled! [&>svg]:fill-brand-gray-2 rounded-lg text-brand-gray-2" : "btn [&>svg]:fill-brand-dark text-brand-dark",
               )} 
               type='button'
               onClick={handleUpgrade}

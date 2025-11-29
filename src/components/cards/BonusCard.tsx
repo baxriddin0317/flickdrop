@@ -80,7 +80,7 @@ const BonusCard = ({
         Time to receive
       </h5>
       <div className="mt-2.5 flex items-center gap-3">
-        <div className="py-3 px-6 border border-[#232736] border-solid rounded-[10px] bg-[#1f2230] flex items-center">
+        <div className="py-3 px-6 border border-[#232736] border-solid rounded-lg bg-[#1f2230] flex items-center">
           <span className="font-family-gilroy text-[14px] font-bold leading-[18px] text-white">
             {formatNumber(timeLeft.days)}
           </span>
@@ -104,7 +104,7 @@ const BonusCard = ({
           </span>
         </div>
         <button
-          className="py-3 px-7 rounded-[10px] font-family-gilroy text-black font-medium transition-all linear cursor-pointer"
+          className="py-3 px-7 rounded-lg font-family-gilroy text-black font-medium transition-all linear cursor-pointer"
           style={{ backgroundColor: btnColor }}
           onMouseEnter={(e) => e.currentTarget.style.filter = 'brightness(0.9)'}
           onMouseLeave={(e) => e.currentTarget.style.filter = 'brightness(1)'}

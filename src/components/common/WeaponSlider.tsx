@@ -127,8 +127,8 @@ const WeaponSlider = () => {
   }, [])
 
   return (
-    <div className='max-w-[1728px] mx-auto px-1.5 md:px-4 lg:px-8'>
-      <div className="w-full overflow-hidden relative bg-[#101217] rounded-[20px] border border-white/5 shadow-[0_0_13.3px_0_rgba(0,0,0,0.30)_inset] py-1.5 px-2.5 lg:p-2.5 z-0">
+    <div className='max-w-[1728px] mx-auto px-1.5 lg:px-8'>
+      <div className="w-full overflow-hidden relative bg-[#101217] rounded-20 border border-white/5 shadow-[0_0_13.3px_0_rgba(0,0,0,0.30)_inset] py-1.5 px-2.5 lg:p-2.5 z-0">
         <div className="absolute z-20 left-2.5 flex flex-col">
           <button
             onClick={() => setActiveFilter('all')}

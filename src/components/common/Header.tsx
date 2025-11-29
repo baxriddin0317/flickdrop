@@ -17,7 +17,7 @@ const Header = () => {
   
   return (
     <header className='relative z-10'>
-      <div className='max-w-[1728px] flex items-center justify-between w-full mx-auto px-1.5 md:px-4 lg:px-8 gap-2 py-1.5'>
+      <div className='max-w-[1728px] flex items-center justify-between w-full mx-auto px-1.5 lg:px-8 gap-2 py-1.5'>
         <div className='flex items-center '>
           <OnlinesIcon />
           <p className='text-sm font-medium text-brand-gray'>
@@ -45,7 +45,7 @@ const Header = () => {
       </div>
 
       <nav className='bg-[linear-gradient(180deg,#181B27_0%,#161822_100%)] py-4'>
-        <div className='max-w-[1728px] flex items-center gap-2 justify-between w-full mx-auto px-1.5 md:px-4 lg:px-8'>
+        <div className='max-w-[1728px] flex items-center gap-2 justify-between w-full mx-auto px-1.5 lg:px-8'>
           <div className='flex items-center gap-6'>
             {/* logo */}
             <Link className='relative h-[49] md:w-[198px] w-[123px]' href={'/'}>
@@ -122,24 +122,24 @@ const Header = () => {
                   ))}
                 </ListboxOptions>
               </Listbox>
-              <button className='flex items-center justify-center lg:gap-2.5 px-3 md:px-3.5 btn h-full uppercase font-bold text-brand-dark cursor-pointer' type='button'>
+              <button className='flex items-center justify-center lg:gap-2.5 px-3 md:px-3.5 btn h-full uppercase font-bold text-brand-dark cursor-pointer [&>svg]:fill-brand-disabled' type='button'>
                 <CashIcon />
                 <span className='hidden lg:block'>Deposit</span>
               </button>
             </div>
             {/* profile */}
-            <Link className='relative overflow-hidden rounded-[10px] w-10 h-[42px] md:size-11' href={'/profile'}>
+            <Link className='relative overflow-hidden rounded-lg w-10 h-[42px] md:size-11' href={'/profile'}>
               <Image src={'/profile.jpg'} fill alt='profile' />
             </Link>
-            <button className='hidden size-11 md:flex items-center justify-center bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-[10px] [&>svg]:fill-brand-gray cursor-pointer'>
+            <button className='hidden size-11 md:flex items-center justify-center bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-lg [&>svg]:fill-brand-gray cursor-pointer'>
               <BellIcon />
             </button>
-            <button className='hidden size-11 md:flex items-center justify-center bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-[10px] [&>svg]:fill-brand-gray cursor-pointer'>
+            <button className='hidden size-11 md:flex items-center justify-center bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-lg [&>svg]:fill-brand-gray cursor-pointer'>
               <SettingsIcon />
             </button>
             <button 
               onClick={toggleMobileMenu}
-              className='hidden md:flex xl2:hidden items-center justify-center size-11 bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-[10px] cursor-pointer'
+              className='hidden md:flex xl2:hidden items-center justify-center size-11 bg-brand-dark shadow-[0_0_13.3px_0_rgba(0,0,0,0.06)_inset] rounded-lg cursor-pointer'
             >
               <MenuIcon />
             </button>

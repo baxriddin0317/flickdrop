@@ -13,7 +13,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <div className="w-full py-6 overflow-x-hidden relative z-0">
+      <div className="w-full py-2.5 sm:py-4 lg:py-6 overflow-x-hidden relative z-0">
         <WeaponSlider />
       </div>
       <MobileNavigation />
