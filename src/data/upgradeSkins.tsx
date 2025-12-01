@@ -1,6 +1,16 @@
 import { ContractIcon, GiftIcon, HomeIcon, UpgradeIcon } from "@/components/icons";
 import { InventoryItem } from "@/components/upgrade/InventoryAndSkins";
 
+export interface itemI {
+  id: number;
+  name: string;
+  date: string;
+  time: string;
+  imgUrl: string;
+  profileImg: string;
+  gunName: string;
+}
+
 export const links = [
   { id: 'main', name: 'Main', href: '/', icon: <HomeIcon /> },
   { id: 'bonus', name: 'Bonus', href: '/bonus', icon: <GiftIcon /> },
@@ -43,3 +53,185 @@ export const upgradeSkins: InventoryItem[] = [
   { id: 24, name: "UMP-45 | Primal Saber", type: "Field-Tested", price: "74.09" },
 ];
 
+export const winnersItems: itemI[] = [
+  {
+    id: 1,
+    name: "JuicyArt",
+    date: "2025-09-17",
+    time: "17:00",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 2,
+    name: "JuicyArt",
+    date: "2025-09-17",
+    time: "17:05",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 3,
+    name: "JuicyArt",
+    date: "2025-09-17",
+    time: "17:10",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 4,
+    name: "JuicyArt",
+    date: "2025-09-17",
+    time: "17:15",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 5,
+    name: "JuicyArt",
+    date: "2025-09-18",
+    time: "11:20",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 6,
+    name: "JuicyArt",
+    date: "2025-09-18",
+    time: "11:25",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 7,
+    name: "JuicyArt",
+    date: "2025-09-18",
+    time: "11:30",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 8,
+    name: "JuicyArt",
+    date: "2025-09-18",
+    time: "11:35",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 9,
+    name: "JuicyArt",
+    date: "2025-09-19",
+    time: "14:00",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 10,
+    name: "JuicyArt",
+    date: "2025-09-19",
+    time: "14:05",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 11,
+    name: "JuicyArt",
+    date: "2025-09-19",
+    time: "14:10",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 12,
+    name: "JuicyArt",
+    date: "2025-09-19",
+    time: "14:15",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 13,
+    name: "JuicyArt",
+    date: "2025-09-20",
+    time: "09:00",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 14,
+    name: "JuicyArt",
+    date: "2025-09-20",
+    time: "09:05",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 15,
+    name: "JuicyArt",
+    date: "2025-09-20",
+    time: "09:10",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 16,
+    name: "JuicyArt",
+    date: "2025-09-20",
+    time: "09:15",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 17,
+    name: "JuicyArt",
+    date: "2025-09-21",
+    time: "19:40",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 18,
+    name: "JuicyArt",
+    date: "2025-09-21",
+    time: "19:45",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 19,
+    name: "JuicyArt",
+    date: "2025-09-21",
+    time: "19:50",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  },
+  {
+    id: 20,
+    name: "JuicyArt",
+    date: "2025-09-21",
+    time: "19:55",
+    imgUrl: "/bonuses/ak-47.png",
+    profileImg: "/profile/avatar.jpg",
+    gunName: "AK-47",
+  }
+];
