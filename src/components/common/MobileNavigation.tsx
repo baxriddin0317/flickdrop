@@ -57,7 +57,7 @@ const MobileNavigation = () => {
             <UpgradeIcon />
           </span>
         </Link>
-        <Link className="absolute top-10 right-8" href={'/contact'}>
+        <Link className="absolute top-10 right-8" href={'/contract'}>
           <span>
             <MenuBg5 />
           </span>

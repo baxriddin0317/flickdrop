@@ -3,13 +3,7 @@ import { useState } from "react"
 
 import { Slider } from "@/components/ui/slider"
 import SkinCard from "../cards/SkinCard";
-
-export interface InventoryItem{
-  id: number;
-  price: string;
-  name: string;
-  type: string;
-}
+import { InventoryItem } from "@/data/upgradeSkins";
 
 interface props {
   title: string;
@@ -57,7 +51,7 @@ const InventoryAndSkins = ({title, items}: props) => {
         {items.length > 0 ? (
           <div className="overflow-y-scroll scroll-style grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-1 min-h-full h-full pr-3">
             {items.map((item) => (
-              <SkinCard key={item.id} price={item.price} name={item.name} type={item.type} />
+              <SkinCard key={item.id} {...item} />
             ))}
           </div>
         ) : (

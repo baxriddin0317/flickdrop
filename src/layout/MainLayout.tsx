@@ -17,7 +17,7 @@ export default function Layout({ children }: LayoutProps) {
         <WeaponSlider />
       </div>
       <MobileNavigation />
-      <main className="mb-40">
+      <main className="mb-20 md:mb-40">
         {children}
       </main>
 

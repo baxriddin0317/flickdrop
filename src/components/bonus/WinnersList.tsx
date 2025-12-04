@@ -29,7 +29,7 @@ const WinnersList = () => {
         </h2>
       </div>
       {/* ===== */}
-      <div className="flex flex-col max-h-[576px] overflow-y-auto">
+      <div className="flex flex-col max-h-[576px] overflow-y-auto scroll-style">
         {visibleItems.map(item => (
           <WinnerCard item={item} key={item.id} />
         ))}

@@ -1,12 +1,16 @@
+import { InventoryItem } from "@/data/upgradeSkins";
 import Image from "next/image";
+import { useMemo } from "react";
 
-interface props {
+const SHAPE_COLORS = ['#ff9d00', '#FF0000', '#FF00E6', '#003CFF', '#FF00E6'];
 
-  price: string;
-  name: string;
-  type: string;
-}
-const SkinCard = ({price, name, type}: props) => {
+const SkinCard = ({price, name, type, id}: InventoryItem) => {
+    const shapeColor = useMemo(() => {
+        // Use id to get a consistent random color for each card
+        const colorIndex = id % SHAPE_COLORS.length;
+        return SHAPE_COLORS[colorIndex];
+    }, [id]);
+
     return (
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-[134px] overflow-hidden rounded-[8px] cursor-pointer bg-brand-disabled shadow-[0_0_53.625px_0_rgba(0,0,0,0.12)_inset]">
         <div className="absolute top-2.5 right-2.5 flex items-center gap-1">
@@ -23,7 +27,7 @@ const SkinCard = ({price, name, type}: props) => {
         <span className="absolute z-0 bottom-0 w-full left-0">
           <svg className="h-[121px] min-w-[153px] w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153 121" fill="none">
             <g filter="url(#filter0_f_279_18080)">
-              <path d="M-8.62499 133.416C-8.62499 129.492 -6.89365 125.768 -3.89353 123.239L65.4171 64.8066C70.9648 60.1297 79.0648 60.0942 84.6532 64.7225L155.322 123.25C158.364 125.769 160.125 129.514 160.125 133.465C160.125 140.79 154.187 146.728 146.862 146.728H4.68651C-2.66524 146.728 -8.625 140.768 -8.62499 133.416Z" fill="#FF0000" fillOpacity="0.43" />
+              <path d="M-8.62499 133.416C-8.62499 129.492 -6.89365 125.768 -3.89353 123.239L65.4171 64.8066C70.9648 60.1297 79.0648 60.0942 84.6532 64.7225L155.322 123.25C158.364 125.769 160.125 129.514 160.125 133.465C160.125 140.79 154.187 146.728 146.862 146.728H4.68651C-2.66524 146.728 -8.625 140.768 -8.62499 133.416Z" fill={shapeColor} fillOpacity="0.43" />
             </g>
             <defs>
               <filter id="filter0_f_279_18080" x="-69.9" y="-9.53674e-05" width="291.3" height="208.003" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">

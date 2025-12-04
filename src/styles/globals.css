@@ -232,10 +232,16 @@
 body {
   font-family: 'Gilroy';
   background-color: #0C0E16;
-  background-image: url("/main-bg.jpg");
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: 100vw 100%;
+}
+
+/* Apply main background image only on lg and larger screens (>= 1024px) */
+@media (min-width: 1024px) {
+  body {
+    background-image: url("/main-bg.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100vw 100%;
+  }
 }
 
 .gift-title{

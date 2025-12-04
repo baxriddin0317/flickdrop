@@ -24,7 +24,7 @@ const ProductGrid = () => {
           {upgradeSkins.length > 0 ? (
             <div className="overflow-y-scroll scroll-style grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-1 min-h-full h-full pr-3">
               {upgradeSkins.map((item) => (
-                <SkinCard key={item.id} price={item.price} name={item.name} type={item.type} />
+                <SkinCard key={item.id} {...item} />
               ))}
             </div>
           ) : (

@@ -1,5 +1,16 @@
 import { ContractIcon, GiftIcon, HomeIcon, UpgradeIcon } from "@/components/icons";
-import { InventoryItem } from "@/components/upgrade/InventoryAndSkins";
+
+export interface InventoryItem{
+  id: number;
+  price: string;
+  name: string;
+  type: string;
+}
+
+export interface ContractItem {
+  id: number;
+  imgUrl: string;
+}
 
 export interface itemI {
   id: number;
@@ -15,7 +26,7 @@ export const links = [
   { id: 'main', name: 'Main', href: '/', icon: <HomeIcon /> },
   { id: 'bonus', name: 'Bonus', href: '/bonus', icon: <GiftIcon /> },
   { id: 'upgrade', name: 'Upgrade', href: '/upgrade', icon: <UpgradeIcon /> },
-  { id: 'contract', name: 'Contract', href: '/contact', icon: <ContractIcon /> }
+  { id: 'contract', name: 'Contract', href: '/contract', icon: <ContractIcon /> }
 ]
 
 export const currencies = [

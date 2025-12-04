@@ -8,7 +8,7 @@ import { HeroLeft, HeroProgress, HeroRight, useAnimatedProgress } from './HeroSv
 type UpgradeState = 'ready' | 'win' | 'lose' | 'disabled'
 
 const UpgradeHero = () => {
-  const [state, setState] = useState<UpgradeState>('ready')
+  const [state, setState] = useState<UpgradeState>('ready');
   const precent = 20
   const animatedPrecent = useAnimatedProgress(precent)
   const lg2Breakpoint = 1110;
